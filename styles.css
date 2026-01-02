@@ -988,15 +988,31 @@ main {
 @media (max-width: 768px) {
   .hero {
     grid-template-columns: 1fr;
-    gap: 22px;
+    grid-template-areas:
+      "copy"
+      "gallery"
+      "panel";
+    gap: 18px;
+    align-items: stretch;
   }
 
   .hero__copy {
-    max-width: 100%;
+    grid-area: copy;
+    max-width: none;
+    width: 100%;
   }
 
   .hero__gallery {
-    width: min(100%, 420px);
+    grid-area: gallery;
+    width: 100%;
+    max-width: none;
+  }
+
+  .hero__panel {
+    grid-area: panel;
+    justify-self: stretch;
+    width: 100%;
+    max-width: none;
   }
 
   .map-status-grid {
@@ -1095,7 +1111,7 @@ main {
 
   .gallery__viewport {
     border-radius: 14px;
-    aspect-ratio: 4 / 5;
+    aspect-ratio: 16 / 10;
   }
 
   .gallery__btn {
@@ -1400,9 +1416,4 @@ main {
   outline-offset: 3px;
 }
 
-@media (max-width: 720px) {
-  .topbar { padding: 12px 20px; }
-  .nav { gap: 8px; font-size: 12px; }
-  .hero { padding: 60px 20px 30px; }
-  .section { padding: 28px 20px 6px; }
-}
+
