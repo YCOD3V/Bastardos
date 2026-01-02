@@ -831,6 +831,10 @@ main {
   object-position: center;
 }
 
+.gallery__item:first-child img {
+  object-position: center 80%;
+}
+
 .gallery__btn {
   border: 1px solid var(--border);
   background: rgba(6, 16, 11, 0.78);
