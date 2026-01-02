@@ -27,7 +27,7 @@
 
   <main id="contenido-principal">
     <section class="hero" id="unete">
-      <div class="hero__copy">
+      <div class="hero__copy hero__block">
         <p class="eyebrow eyebrow--accent">Servidor LATAM - Enfocado en el progreso justo</p>
         <h1>Desafío V++ sin ventajas pagas<br /><span class="glitch" data-text="Bastardos V++">Bastardos V++.</span></h1>
         <p class="lede">Supervivencia hardcore, PvP balanceado y comunidad comprometida.</p>
@@ -37,7 +37,7 @@
         </div>
           <p class="cta-note">En Bastardos V++ no existe el pay to win. Las donaciones son completamente voluntarias y no otorgan ventajas. Evitamos la corrupción de sistemas monetizados: aquí el progreso depende de tu habilidad, no de tu billetera, sin beneficios ocultos.</p>
       </div>
-      <div class="hero__gallery" aria-label="Galería de capturas">
+      <div class="hero__gallery hero__block" aria-label="Galería de capturas">
           <div class="gallery__shell">
             <button class="gallery__btn" type="button" data-gallery-prev aria-label="Imagen anterior">&lt;</button>
             <div class="gallery__viewport">
@@ -60,28 +60,51 @@
             <button class="gallery__btn" type="button" data-gallery-next aria-label="Imagen siguiente">&gt;</button>
           </div>
         </div>
-      <div class="hero__panel">
-        <div class="panel">
-          <div class="panel__title"><strong>Servidor</strong></div>
-          <div class="panel__value" id="server-name"><strong>Nombre:</strong> LATAM|BASTARDOS-V++|1PP|8MAN|BBP|BedSpawn|Party</div>
-          <div class="panel__value" id="server-ip"><strong>IP:</strong> 38.225.91.40</div>
-          <div class="panel__value"><strong>Puerto:</strong> 2702</div>
-          <div class="panel__value"><strong>Mapa:</strong> Chernarusplus (Early Winter)</div>
-          <div class="panel__value"><strong>Modo:</strong> 1PP</div>
-          <div class="panel__value"><strong>Plataforma:</strong> PC</div>
-          <div class="panel__value"><strong>Slots:</strong> 80 jugadores</div>
-          <div class="panel__sub status-operativo"><span class="status-label status-label--light"><strong>Estado:</strong></span> Operativo</div>
-          <p class="panel__note" title="Somos un servidor sin fines de lucro, creado por y para jugadores.">Somos un servidor sin fines de lucro, creado por y para jugadores.</p>
-        </div>
-        <div class="panel noise">
-          <div class="panel__title">Votaciones</div>
-          <p class="panel__sub">Vota en TrackyServer cada 24 horas para dar mayor visibilidad al servidor.</p>
-          <div class="vote-actions">
-            <a class="btn ghost btn--wide" href="https://www.trackyserver.com/server/latam-bastardos-v-1pp-4man-bbp-bedspawn-party-3311774" target="_blank" rel="noopener">🥈 Votar en TrackyServer</a>
+      <div class="hero__panel hero__block">
+        <div class="panel panel--server">
+          <div class="panel__title">
+            <strong>Servidor</strong>
+            <span class="server-panel__region">LATAM · Vanilla V++</span>
           </div>
+          <div class="server-panel__stat server-panel__stat--full">
+            <span class="server-panel__stat-label">Nombre</span>
+            <span class="server-panel__stat-value" id="server-name">LATAM|BASTARDOS-V++|1PP|8MAN|BBP|BedSpawn|Party</span>
+          </div>
+          <div class="server-panel__grid">
+            <div class="server-panel__stat">
+              <span class="server-panel__stat-label">Dirección IP</span>
+              <span class="server-panel__stat-value server-panel__ip" id="server-ip">38.225.91.40:2702</span>
+            </div>
+            <div class="server-panel__stat">
+              <span class="server-panel__stat-label">Mapa</span>
+              <span class="server-panel__stat-value">Chernarusplus (Early Winter)</span>
+            </div>
+          </div>
+          <div class="server-panel__grid server-panel__grid--compact">
+            <div class="server-panel__stat">
+              <span class="server-panel__stat-label">Modo</span>
+              <span class="server-panel__stat-value">1PP</span>
+            </div>
+            <div class="server-panel__stat">
+              <span class="server-panel__stat-label">Plataforma</span>
+              <span class="server-panel__stat-value">PC</span>
+            </div>
+            <div class="server-panel__stat">
+              <span class="server-panel__stat-label">Slots</span>
+              <span class="server-panel__stat-value">80</span>
+            </div>
+          </div>
+          <div class="server-panel__status">
+            <span class="status-label status-label--light">Estado</span>
+            <span class="status-chip status-chip--good">Operativo</span>
+          </div>
+          <p class="panel__note" title="Somos un servidor sin fines de lucro, creado por y para jugadores.">Somos un servidor sin fines de lucro, creado por y para jugadores.</p>
+
         </div>
       </div>
     </section>
+
+
 
     <section class="section section--compact" id="servidor" aria-labelledby="section-informacion-clave">
       <div class="section__header section__header--wide">
@@ -123,7 +146,7 @@
             </div>
           </div>
           <p class="status-card__note-line"><span class="status-card__note-source"></span> <span class="status-card__note-sync" data-server-note>Sincronizando…</span></p>
-          <img class="status-card__center-logo" src="img/BattleMetrics.svg" alt="" aria-hidden="true" loading="lazy" decoding="async" />
+          <img class="status-card__center-logo" src="img/logo.42129.svg" alt="" aria-hidden="true" loading="lazy" decoding="async" />
           <p class="status-card__actions"><a class="status-card__link" href="https://www.battlemetrics.com/servers/dayz/36230853" target="_blank" rel="noopener">Ver panel completo</a></p>
         </div>
       </div>
@@ -195,6 +218,14 @@
         </div>
       </div>
     </section>
+
+  <div class="floating-vote">
+    <a class="btn ghost btn--accent" href="https://www.trackyserver.com/server/latam-bastardos-v-1pp-4man-bbp-bedspawn-party-3311774" target="_blank" rel="noopener">🥈 Votar en TrackyServer</a>
+    <div class="floating-vote__content">
+      <p>Puedes votar cada 24 horas para dar mayor visibilidad al servidor.</p>
+      <p class="floating-vote__note">Tu apoyo hará crecer la comunidad.</p>
+    </div>
+  </div>
 
   <footer class="footer">
     <div class="footer__row">
