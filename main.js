@@ -213,10 +213,7 @@ if (statusCard) {
 
       const formattedTimestamp = formatTimestamp(updatedAt || Date.now());
       setText(selectors.updated, formattedTimestamp);
-      setText(
-        selectors.note,
-        `Última sincronización · ${formattedTimestamp} • Actualización automática cada ${refreshMinutes} min`
-      );
+      setText(selectors.note, `Última sincronización · ${formattedTimestamp}`);
 
       statusCard.dataset.state = 'ready';
     } catch (error) {
