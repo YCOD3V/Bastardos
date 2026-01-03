@@ -50,6 +50,24 @@ img {
   display: block;
 }
 
+/* Prevent text selection on protected content while leaving controls available */
+[data-protect-content] {
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+[data-protect-content] input,
+[data-protect-content] textarea,
+[data-protect-content] select,
+[data-protect-content] button,
+[data-protect-content] a,
+[data-protect-content] [contenteditable="true"] {
+  -webkit-user-select: auto;
+  -ms-user-select: auto;
+  user-select: auto;
+}
+
 .skip-link {
   position: absolute;
   left: -999px;
