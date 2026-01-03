@@ -251,3 +251,56 @@ if (statusCard) {
 
   syncStatus();
 }
+
+const PROTECTED_SELECTOR = '[data-protect-content]';
+const INTERACTIVE_SELECTOR = 'input, textarea, select, button, a, [contenteditable="true"]';
+
+const isEditableContext = (target) => {
+  if (!target) return false;
+  if (target.isContentEditable) return true;
+  const tagName = target.tagName?.toLowerCase();
+  return tagName === 'input' || tagName === 'textarea' || tagName === 'select';
+};
+
+const allowsUserActions = (target) => {
+  if (!target) return true;
+  if (isEditableContext(target)) return true;
+  return Boolean(target.closest(INTERACTIVE_SELECTOR));
+};
+
+const isInsideProtectedZone = (target) => Boolean(target?.closest(PROTECTED_SELECTOR));
+
+const shouldBlockEvent = (target) => isInsideProtectedZone(target) && !allowsUserActions(target);
+
+const preventDefaultIfNeeded = (event) => {
+  if (shouldBlockEvent(event.target)) {
+    event.preventDefault();
+    event.stopPropagation();
+  }
+};
+
+document.addEventListener('contextmenu', (event) => {
+  if (shouldBlockEvent(event.target)) {
+    event.preventDefault();
+  }
+});
+
+document.addEventListener('keydown', (event) => {
+  if (!(event.ctrlKey || event.metaKey)) return;
+  const key = event.key?.toLowerCase();
+  if (key === 'c' || key === 'x' || key === 'v') {
+    if (shouldBlockEvent(event.target)) {
+      event.preventDefault();
+    }
+  }
+});
+
+['copy', 'cut', 'paste'].forEach((type) => {
+  document.addEventListener(type, preventDefaultIfNeeded, true);
+});
+
+document.addEventListener('dragstart', (event) => {
+  if (shouldBlockEvent(event.target)) {
+    event.preventDefault();
+  }
+});
